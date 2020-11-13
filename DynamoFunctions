@@ -1,5 +1,5 @@
 def Find3DViewId(ViewCol):
-''' Function returns ID of a 3D view. Required to create a new view in Revit. ''''
+	''' Function returns ID of a 3D view. Required to create a new view in Revit. '''
 	try:
 		for view in ViewCol:
 			if view.ViewFamily == ViewFamily.ThreeDimensional:
@@ -9,7 +9,7 @@ def Find3DViewId(ViewCol):
 		return "Error!"
 
 def FindFilterId(FilterCol, PhaseFilterName):
-''' Function returns ID of a phase filter in Revit based on the name fed in. Required to set up a view filter in Revit '''
+	''' Function returns ID of a phase filter in Revit based on the name fed in. Required to set up a view filter in Revit '''
 	try:
 		for filter in FilterCol:
 			if filter.Name == PhaseFilterName:
@@ -19,7 +19,7 @@ def FindFilterId(FilterCol, PhaseFilterName):
 		return "Incorrect Phase Filter Name!"
     
 def flatten(*args):
-''' Function flattens arguments fed in. '''
+	''' Function flattens arguments fed in. '''
     for x in args:
         if hasattr(x, '__iter__'):
             for y in flatten(*x): yield y
@@ -44,7 +44,7 @@ def UniqueIdToIFCGUID(UniqueId):
     return ifc_guid
 
 def PurgeDir(parent):
-''' Purge directory. Declare extensions as 'Extensions = []'. '''
+	''' Purge directory. Declare extensions as 'Extensions = []'. '''
     for root, dirs, files in os.walk(parent):                                      
         for item in files:
             # Delete subordinate files                                                 
