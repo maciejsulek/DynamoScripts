@@ -19,7 +19,6 @@ def FindFilterId(FilterCol, PhaseFilterName):
 		return "Incorrect Phase Filter Name!"
     
 def flatten(*args):
-	''' Function flattens arguments fed in. '''
     for x in args:
         if hasattr(x, '__iter__'):
             for y in flatten(*x): yield y
@@ -44,7 +43,6 @@ def UniqueIdToIFCGUID(UniqueId):
     return ifc_guid
 
 def PurgeDir(parent):
-	''' Purge directory. Declare extensions as 'Extensions = []'. '''
     for root, dirs, files in os.walk(parent):                                      
         for item in files:
             # Delete subordinate files                                                 
