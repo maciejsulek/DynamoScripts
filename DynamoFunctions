@@ -1,5 +1,5 @@
 def Find3DViewId(ViewCol):
-	''' Function returns ID of a 3D view. Required to create a new view in Revit. '''
+	''' Function returns ID of the 3D view. Required to create a new view in Revit. '''
 	try:
 		for view in ViewCol:
 			if view.ViewFamily == ViewFamily.ThreeDimensional:
@@ -9,7 +9,7 @@ def Find3DViewId(ViewCol):
 		return "Error!"
 
 def FindFilterId(FilterCol, PhaseFilterName):
-	''' Function returns ID of a phase filter in Revit based on the name fed in. Required to set up a view filter in Revit '''
+	''' Function returns ID of a phase filter based on the name fed in. Required to set up a view filter in Revit '''
 	try:
 		for filter in FilterCol:
 			if filter.Name == PhaseFilterName:
@@ -42,12 +42,12 @@ def UniqueIdToIFCGUID(UniqueId):
     ifc_guid = ifcopenshell.guid.compress(dwf_guid)
     return ifc_guid
 
-def PurgeDir(parent):
+def PurgeDir(parent, extensions):
     for root, dirs, files in os.walk(parent):                                      
         for item in files:
             # Delete subordinate files                                                 
             filespec = os.path.join(root, item)
-            for i in Extensions:
+            for i in extensions:
                 if filespec.endswith(i):
                     os.unlink(filespec)
         for item in dirs:
