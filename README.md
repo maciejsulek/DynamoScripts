@@ -1,7 +1,5 @@
 # DynamoScripts
 
-Dynamo libraries and ExternalApplication implementation for Revit.
+Collection of Dynamo libraries and custom functions. 
 
-This repository consists of useful Python Dynamo scripts created either by me or saved from the external sources.
-
-Scripts have been tested in Revit 2019.2.
+Note: Tested in Revit 2019.2.
